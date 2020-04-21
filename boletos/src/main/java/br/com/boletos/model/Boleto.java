@@ -1,5 +1,7 @@
 package br.com.boletos.model;
 
+import org.springframework.core.style.ToStringCreator;
+
 public class Boleto {
 
 	private int codigoBoleto;
@@ -30,6 +32,14 @@ public class Boleto {
 		this.valorBoleto = valorBoleto;
 		this.dataVencimento = dataVencimento;
 		this.dataPagamento = dataPagamento;
+	}
+
+	public String toString() {
+		String msg = " Data Emissão: " + dataEmissaoNF + " \n Data Boleto: " + dataEmissaoBoleto + "\n Data Operação: "
+				+ dataOperacao + "\n Cliente: " + cliente + "\n Nota Fiscal: " + nfBoleto + "\n Banco: " + banco
+				+ "\n Valor Boleto: " + valorBoleto + "\n Data Vencimento: " + dataVencimento + "\n Data Pagamento: "
+				+ dataPagamento;
+		return msg;
 	}
 
 	public int getCodigoBoleto() {
