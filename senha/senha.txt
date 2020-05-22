@@ -1,3 +1,0 @@
-MySQL:
-root
-senha: 46759100Admin
