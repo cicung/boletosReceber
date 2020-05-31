@@ -2,6 +2,7 @@ package br.com.boletos.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

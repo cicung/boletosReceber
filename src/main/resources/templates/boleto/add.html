@@ -1,0 +1,106 @@
+<div th:replace="shared/header :: header"></div>
+
+<div class="container">
+	<div class="p-3 table-wrapper table-active">
+		<div class="table-title">
+			<div class="row">
+				<div class="col-sm-6">
+					<legend class="display">Inclusão de Boleto</legend>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-sm-11 control-label">
+		<p class="help-block">
+			<h11 class="text-danger">*</h11>
+			Campo Obrigatório
+		</p>
+	</div>
+
+	<form th:action="@{salvar}" method="post" th:object="${boletos}">
+
+		<div class="row justify-content-center mb-5">
+			<div class="col-sm-12 col-md-10 col-lg-8">
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+						<label for="inputNome">Cliente <h11 class="text-danger">*</h11></label>
+						<input type="text" class="form-control" id="inputCliente" th:field="*{cliente}"> 
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-sm-4">
+						<label  for="inpuEmissaoNF">Data Emissão NF <h11 class="text-danger">*</h11></label>
+						<input type="date" class="form-control" id="inputEmissaoNF" th:field="*{dataEmissaoNF}">
+					</div>
+
+					<div class="form-group col-sm-4">
+						<label for="inputEmissaoBoleto">Data Emissão Boleto <h11 class="text-danger">*</h11></label>
+						<input type="date" class="form-control" id="inputEmissaoBoleto" th:field="*{dataEmissaoBoleto}">
+					</div>
+				</div>
+
+				<div class="form row">
+					<div class="form-group col-sm-4">
+						<label for="radios">
+							Este Título foi operado? <h11 class="text-danger">*</h11>
+						</label>
+						<div class="form-group col-sm-8">
+							<label required class="radio-inline" for="radios-0">
+								<input type="radio" name="sim" id="true"> Sim 
+							</label>
+							<label required class="radio-inline" for="radios-0">
+								<input type="radio" name="sim" id="false"> Não
+							</label>
+						</div>
+
+					</div>
+
+					<div class="form-group col-sm-4">
+						<label for="inputOperacao">Data da Operação</label>
+						<input type="date" class="form-control" id="inputOperacao" th:field="*{dataOperacao}">
+					</div>
+
+					<div class="form-group col-sm-4">
+						<label for="inputNF">
+							 Nº Documento <h11 class="text-danger">*</h11>			
+							<input type="text" class="form-control" id="inputNF" th:field="*{nfBoleto}">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-sm-4">
+							<label for="inputBanco">Banco</label>
+							<select id="inputBanco" class="form-control" th:field="*{banco}">
+								<option selected>Escolha...</option>
+								<option>Bradesco</option>
+								<option>Itaú</option>
+								<option>Santander</option>
+								<option>Daycoval</option>
+							</select>
+						</div>
+
+						<div class="form-group col-sm-4">
+							<label for="inputValor">Valor (R$)</label>
+							<input type="text" class="form-control" id="inputOperacao" th:field="*{valorBoleto}">
+						</div>
+
+						<div class="form-group col-sm-4">
+							<label for="inputVencimento">Data do Vencimento</label>
+							<input type="date" class="form-control" id="inputVencimento" th:field="*{dataVencimento}">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="col-sm-12 text-right">
+							<input type="submit" class="btn btn-primary col-sm-2 my-3" value="Salvar">
+						</div>
+					</div>
+				</div>
+		</div>
+	</form>
+</div>
+
+<div th:replace="shared/footer :: footer"></div>

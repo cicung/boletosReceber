@@ -3,6 +3,7 @@ package br.com.boletos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.boletos.repository.BoletoRepository;
@@ -12,6 +13,7 @@ como argumento e pronto, você tem a sua aplicação no ar.
 A outra parte da mágica acontece por conta da annotation @SpringBootApplication. Ela é um Sterotype
 do Spring Boot que já encapsula algumas outras annotations*/
 @SpringBootApplication
+@EnableAutoConfiguration
 public class BoletosAplication implements CommandLineRunner {
 
 	// Injetando a classe BoletoRepository

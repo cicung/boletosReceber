@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import br.com.boletos.model.Boleto;
@@ -23,7 +24,7 @@ public class BoletoRepository {
 
 	public int insert(Boleto boleto) {
 
-		String query = "insert into controleboletos (dt_emissãoNF, dt_emissãoBT,dt_operacao, cliente, nf_boleto, Banco, valor_Boleto, dt_vencimento, dt_pagamento ) values (?,?,?,?,?,?,?,?,?)";
+		String query = "insert into controleboletos (dt_emissãoNF, dt_emissãoBT, dt_operacao, cliente, nf_boleto, Banco, valor_Boleto, dt_vencimento, dt_pagamento ) values (?,?,?,?,?,?,?,?,?)";
 		return jdbcTemplate.update(query, boleto.getDataEmissaoNF(), boleto.getDataEmissaoBoleto(),
 				boleto.getDataOperacao(), boleto.getCliente(), boleto.getNfBoleto(), boleto.getBanco(),
 				boleto.getValorBoleto(), boleto.getDataVencimento(), boleto.getDataPagamento());
