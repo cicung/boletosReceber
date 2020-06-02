@@ -19,7 +19,7 @@
 		</p>
 	</div>
 
-	<form th:action="@{/boleto/save}" method="post" th:object="${boleto}">
+	<form th:action="@{/boleto/update/{codigoBoleto}(id=${boleto.codigoBoleto})}" method="post" th:object="${boleto}">
 
 		<div class="row justify-content-center mb-5">
 			<div class="col-sm-12 col-md-10 col-lg-8">
@@ -79,6 +79,7 @@
 								<option th:value="Itaú">Itaú</option>
 								<option th:value="Santander">Santander</option>
 								<option th:value="Daycoval">Daycoval</option>
+								<option th:value="Inter">Inter</option>
 							</select>
 						</div>
 

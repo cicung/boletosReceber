@@ -63,10 +63,10 @@
     				  <td th:text="${boleto.dataVencimento}"></td>
     				  <td th:text="${boleto.dataPagamento}"></td>
     				  <td>
-						<a class="edit" data-toggle="button" href="#">
+						<a th:href="@{'/boleto/edit/' + ${boleto.codigoBoleto}}">
 							<i class="fa fa-edit text-warning" data-toggle="tooltip" data-placement="top" title="edit"></i>
 						</a>
-						<a class="edit" data-toggle="button" href="#">
+						<a class="delete" data-toggle="button" role="button" href="#">
 							<i class="fa fa-trash text-danger" data-toggle="tooltip" data-placement="top" title="delete"></i>
 						</a>
     				  </td>
