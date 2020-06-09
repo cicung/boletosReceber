@@ -14,8 +14,7 @@ public class BoletoRowMapper implements RowMapper<Boleto> {
 
 		return new Boleto(rs.getInt("cod_boleto"), rs.getString("dt_emissãoNF"), rs.getString("dt_emissãoBT"),
 				rs.getString("dt_operacao"), rs.getString("cliente"), rs.getString("nf_boleto"), rs.getString("Banco"),
-				rs.getFloat("valor_Boleto"), rs.getString("dt_vencimento"), rs.getString("dt_pagamento")
-
+				rs.getFloat("valor_Boleto"), rs.getString("dt_vencimento"), rs.getString("dt_pagamento"), rs.getString("status_Doc"),  null
 		);
 	}
 }

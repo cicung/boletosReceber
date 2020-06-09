@@ -16,17 +16,22 @@ import lombok.Setter;
 public class Boleto {
 
 	private Integer codigoBoleto;
-	public String dataEmissaoNF;
-	public String dataEmissaoBoleto;
-	public String dataOperacao;
-	public String cliente;
-	public String nfBoleto;
-	public String banco;
-	public Float valorBoleto;
-	public String dataVencimento;
-	public String dataPagamento;
+	private String dataEmissaoNF;
+	private String dataEmissaoBoleto;
+	private String dataOperacao;
+	private String cliente;
+	private String nfBoleto;
+	private String banco;
+	private Float valorBoleto;
+	private String dataVencimento;
+	private String dataPagamento;
+	public String statusDoc;
+	private Boolean selected;
+
 
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
 	}
+
+
 }
