@@ -45,7 +45,6 @@ public class BoletoController {
 		Boleto boleto = rep.listById(codigo);
 		model.addAttribute("boleto", boleto);
 		return "/boleto/edit";
-
 	}
 
 	@PostMapping("/update")
@@ -55,8 +54,7 @@ public class BoletoController {
 	}
 
 	@PostMapping("/delete")
-	public RedirectView deleteById(BoletoView view) {
-		
+	public RedirectView deleteById(BoletoView view) {		
 		for (Boleto boleto : view.getBoletos()) {
 			if(boleto.getSelected()) {
 				rep.deleteById(boleto.getCodigoBoleto());
@@ -69,7 +67,6 @@ public class BoletoController {
 	@GetMapping("/delete/{codigoBoleto}")
 	public RedirectView delete(@PathVariable("codigoBoleto") Integer codigo) {
 	    rep.deleteById(codigo);
-	    
 	    return new RedirectView("/boleto/list");
 	}
 }
